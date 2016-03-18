@@ -10,10 +10,11 @@ var bodyParser = require('body-parser'),
   morgan = require('morgan');
 
 
-//SERVE FILES FROM PUBLIC DIR
+//SERVE FILES FROM DIRS
 app.use('/public', express.static(__dirname + "/public"));
 app.use('/controllers', express.static(__dirname + "/controllers"));
 app.use(express.static(__dirname + "/views"));
+app.use("/views", express.static(__dirname + "/views"));
 
 //MORGAN
 app.use(morgan('dev'));
@@ -25,9 +26,4 @@ app.use(bodyParser.urlencoded({
 
 app.listen(PORT, function() {
   console.log('Up and running on: %s', PORT);
-});
-
-
-app.get('/', function(req, res) {
-  res.send('/views/index.html');
 });
