@@ -12,6 +12,8 @@ var bodyParser = require('body-parser'),
 
 //SERVE FILES FROM PUBLIC DIR
 app.use('/public', express.static(__dirname + "/public"));
+app.use('/controllers', express.static(__dirname + "/controllers"));
+app.use(express.static(__dirname + "/views"));
 
 //MORGAN
 app.use(morgan('dev'));
@@ -27,5 +29,5 @@ app.listen(PORT, function() {
 
 
 app.get('/', function(req, res) {
-  res.send('Hi Ivan');
+  res.send('/views/index.html');
 });
