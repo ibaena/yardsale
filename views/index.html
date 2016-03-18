@@ -11,19 +11,22 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
   </head>
   <body>
 
     <div class="container">
-      <div class="row">
-        <div class="col-md-4 col-md-offset-4" ng-controller="MyController">
-          <h1>
-            {{author.name}}</h1>
-          <p>
-            {{author.title + ', ' + author.company}}
-          </p>
+        <div class="main" ng-controller="MyController">
+          <ul class="artistlist">
+            <li class="artist cf" ng-repeat="item in artists">
+              <img ng-src="../public/images/{{item.shortname}}_tn.jpg" alt="photo" />
+              <div class="info">
+                <h2>{{item.name}}</h2>
+                <h3>{{item.reknown}}</h3>
+              </div>
+            </li>
+          </ul>
         </div>
-      </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
