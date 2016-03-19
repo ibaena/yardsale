@@ -1,0 +1,20 @@
+<form ng-model="user" ng-submit="addUser()" ng-controller="AddController">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input class="form-control" type="text" ng-model="user.name" name="name"/>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Shortname</label>
+    <input class="form-control" type="text" ng-model="user.shortname" name="shortname"/>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Reknown</label>
+    <input class="form-control" type="text" ng-model="user.reknown" name="reknown"/>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Biography</label>
+    <input class="form-control" type="text" ng-model="user.bio" name="bio"/>
+  </div>
+  <button class="btn btn-default" type="submit" id="submit" value="Submit">Submit</button>
+  <pre>{{user}}</pre>
+</form>
